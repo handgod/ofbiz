@@ -52,9 +52,9 @@ access. For a detailed description see the core/docs/entityconfig.html file.
     <debug-xa-resources value="false" />  <!-- see https://issues.apache.org/jira/browse/OFBIZ-4282 for more -->
     
     <delegator name="default" entity-model-reader="main" entity-group-reader="main" entity-eca-reader="main" distributed-cache-clear-enabled="false">
-        <group-map group-name="org.apache.ofbiz" datasource-name="localderby"/>
-        <group-map group-name="org.apache.ofbiz.olap" datasource-name="localderbyolap"/>
-        <group-map group-name="org.apache.ofbiz.tenant" datasource-name="localderbytenant"/>
+        <group-map group-name="org.apache.ofbiz" datasource-name="localmysql"/>
+        <group-map group-name="org.apache.ofbiz.olap" datasource-name="localmysqlolap"/>
+        <group-map group-name="org.apache.ofbiz.tenant" datasource-name="localmysqltenant"/>
     </delegator>
     <delegator name="default-no-eca" entity-model-reader="main" entity-group-reader="main" entity-eca-reader="main" entity-eca-enabled="false" distributed-cache-clear-enabled="false">
         <group-map group-name="org.apache.ofbiz" datasource-name="localderby"/>
@@ -343,9 +343,9 @@ access. For a detailed description see the core/docs/entityconfig.html file.
         <read-data reader-name="ext-demo"/>
         <inline-jdbc
                 jdbc-driver="com.mysql.jdbc.Driver"
-                jdbc-uri="jdbc:mysql://127.0.0.1/ofbiz?autoReconnect=true"
-                jdbc-username="ofbiz"
-                jdbc-password="ofbiz"
+                jdbc-uri="jdbc:mysql://58ba78d647f6b.gz.cdb.myqcloud.com:16978/ofbiz?autoReconnect=true"
+                jdbc-username="root"
+                jdbc-password="Welcome123"
                 isolation-level="ReadCommitted"
                 pool-minsize="2"
                 pool-maxsize="250"
@@ -376,9 +376,9 @@ access. For a detailed description see the core/docs/entityconfig.html file.
         <read-data reader-name="ext-demo"/>
         <inline-jdbc
                 jdbc-driver="com.mysql.jdbc.Driver"
-                jdbc-uri="jdbc:mysql://127.0.0.1/ofbizolap?autoReconnect=true"
-                jdbc-username="ofbiz"
-                jdbc-password="ofbiz"
+                jdbc-uri="jdbc:mysql://58ba78d647f6b.gz.cdb.myqcloud.com:16978/ofbizolap?autoReconnect=true"
+                jdbc-username="root"
+                jdbc-password="Welcome123"
                 isolation-level="ReadCommitted"
                 pool-minsize="2"
                 pool-maxsize="250"
@@ -409,9 +409,9 @@ access. For a detailed description see the core/docs/entityconfig.html file.
         <read-data reader-name="ext-demo"/>
         <inline-jdbc
                 jdbc-driver="com.mysql.jdbc.Driver"
-                jdbc-uri="jdbc:mysql://127.0.0.1/ofbiztenant?autoReconnect=true"
-                jdbc-username="ofbiz"
-                jdbc-password="ofbiz"
+                jdbc-uri="jdbc:mysql://58ba78d647f6b.gz.cdb.myqcloud.com:16978/ofbiztenant?autoReconnect=true"
+                 jdbc-username="root"
+                jdbc-password="Welcome123"
                 isolation-level="ReadCommitted"
                 pool-minsize="2"
                 pool-maxsize="250"
