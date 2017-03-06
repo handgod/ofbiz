@@ -564,6 +564,23 @@ a maven repository. Currently, pushing is limited to localhost maven repository
 
 `gradlew pushPlugin -PpluginId=mycompany -PpluginGroup=com.mycompany.ofbiz.plugin -PpluginVersion=1.2.3 -PpluginDescription="Introduce special functionality X"`
 
+work note:
+1)
+编译初始化OFBiz,Prepare OFBiz:
+Window : gradlew cleanAll loadDefault
+Linux : ./gradlew cleanAll loadDefault
+Start OFBiz:
+windlws : gradlew ofbiz
+linux: ./gradlew ofbiz
+JDK版本：jdk1.8
+
+2)how to change to mysql server:
+http://blog.csdn.net/sky_fate/article/details/49122579 
+create database ofbiz;  
+create database ofbizolap;  
+create database ofbiztenant;  
+use mysql;  
+create user ofbiz@localhost;  
 
 * * * * * * * * * * * *
 
