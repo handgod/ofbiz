@@ -570,9 +570,10 @@ work note:
 Window : gradlew cleanAll loadDefault
 Linux : ./gradlew cleanAll loadDefault
 Start OFBiz:
-windlws : gradlew ofbiz
+windlws : gradlew "ofbiz --start"
 linux: ./gradlew ofbiz
 JDK版本：jdk1.8
+
 
 2)how to change to mysql server:
 http://blog.csdn.net/sky_fate/article/details/49122579 
@@ -581,6 +582,11 @@ create database ofbizolap;
 create database ofbiztenant;  
 use mysql;  
 create user ofbiz@localhost;  
+
+3)run
+http://localhost:8080/ecommerce
+https://localhost:8443/ecommerce/control/main
+https://localhost:8443/webtools
 
 * * * * * * * * * * * *
 
