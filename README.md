@@ -572,6 +572,8 @@ Linux : ./gradlew cleanAll loadDefault
 Start OFBiz:
 windlws : gradlew "ofbiz --start"
 linux: ./gradlew ofbiz
+shutdown:
+gradlew "ofbiz --shutdown"
 JDK版本：jdk1.8
 
 
@@ -587,6 +589,8 @@ create user ofbiz@localhost;
 http://localhost:8080/ecommerce
 https://localhost:8443/ecommerce/control/main
 https://localhost:8443/webtools
+
+
 
 * * * * * * * * * * * *
 
