@@ -590,7 +590,12 @@ http://localhost:8080/ecommerce
 https://localhost:8443/ecommerce/control/main
 https://localhost:8443/webtools
 
-4)ref:
+4)Debug:
+  gradlew "ofbizDebug --start"
+  Debug configuration
+  Create Remote Java Application on localhost:5005
+  set breakpoint on ofbiz.base.start.Start.java
+5)ref:
 archtecture:http://www.ofbizchina.com/thread-51908-1-3.html
 groovy: http://www.ofbizchina.com/thread-53211-1-3.html
 
