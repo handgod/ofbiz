@@ -283,7 +283,6 @@ public class MacroMenuRenderer implements MenuStringRenderer {
             StringBuilder sb = new StringBuilder("End Menu Widget ");
             sb.append(menu.getBoundaryCommentName());
             parameters.put("boundaryComment", sb.toString());
-            parameters.put("style", menu.getMenuContainerStyle(context));
         }
         try {
             executeMacro(writer, "renderMenuEnd", parameters);
