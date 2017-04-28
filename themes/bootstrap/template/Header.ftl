@@ -25,6 +25,30 @@ under the License.
 <#if "ar.iw"?contains(docLangAttr?substring(0, 2))>
     <#assign langDir = "rtl">
 </#if>
+<#if layoutSettings.headerImageUrl?exists>
+    <#assign headerImageUrl = layoutSettings.headerImageUrl>
+      <#elseif layoutSettings.commonHeaderImageUrl?exists>
+        <#assign headerImageUrl = layoutSettings.commonHeaderImageUrl>
+      <#elseif layoutSettings.VT_HDR_IMAGE_URL?exists>
+    <#assign headerImageUrl = layoutSettings.VT_HDR_IMAGE_URL.get(0)>
+</#if>
+<#if (requestAttributes.externalLoginKey)??><#assign externalKeyParam = "?externalLoginKey=" + requestAttributes.externalLoginKey!></#if>
+<#if (externalLoginKey)??><#assign externalKeyParam = "?externalLoginKey=" + requestAttributes.externalLoginKey!></#if>
+<#assign ofbizServerName = application.getAttribute("_serverId")?default("default-server")>
+<#assign contextPath = request.getContextPath()>
+<#assign displayApps = Static["org.apache.ofbiz.webapp.control.LoginWorker"].getAppBarWebInfos(security, userLogin, ofbizServerName, "main")>
+<#assign displaySecondaryApps = Static["org.apache.ofbiz.webapp.control.LoginWorker"].getAppBarWebInfos(security, userLogin, ofbizServerName, "secondary")>
+
+<#assign appModelMenu = Static["org.apache.ofbiz.widget.model.MenuFactory"].getMenuFromLocation(applicationMenuLocation,applicationMenuName)>
+<#if appModelMenu.getModelMenuItemByName(headerItem)??>
+  <#if headerItem!="main">
+    <#assign show_last_menu = true>
+  </#if>
+</#if>
+
+<#if parameters.portalPageId?? && !appModelMenu.getModelMenuItemByName(headerItem)??>
+  <#assign show_last_menu = true>
+</#if>
 <html lang="${docLangAttr}" dir="${langDir}" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -91,48 +115,201 @@ under the License.
       </script>
     </#if>
 </head>
-<#if layoutSettings.headerImageLinkUrl??>
-  <#assign logoLinkURL = "${layoutSettings.headerImageLinkUrl}">
-<#else>
-  <#assign logoLinkURL = "${layoutSettings.commonHeaderImageLinkUrl}">
-</#if>
-<#assign organizationLogoLinkURL = "${layoutSettings.organizationLogoLinkUrl!}">
+	<#if layoutSettings.headerImageLinkUrl??>
+	  <#assign logoLinkURL = "${layoutSettings.headerImageLinkUrl}">
+	<#else>
+	  <#assign logoLinkURL = "${layoutSettings.commonHeaderImageLinkUrl}">
+	</#if>
+	<#assign organizationLogoLinkURL = "${layoutSettings.organizationLogoLinkUrl!}">
+	  
+    <#assign appModelMenu = Static["org.apache.ofbiz.widget.model.MenuFactory"].getMenuFromLocation(applicationMenuLocation,applicationMenuName)>
+	<#if person?has_content>
+	  <#assign userName = (person.firstName!) + " " + (person.middleName!) + " " + person.lastName!>
+	<#elseif partyGroup?has_content>
+	  <#assign userName = partyGroup.groupName!>
+	<#elseif userLogin??>
+	  <#assign userName = userLogin.userLoginId>
+	<#else>
+	  <#assign userName = "">
+	</#if>
+	<#if defaultOrganizationPartyGroupName?has_content>
+	  <#assign orgName = " - " + defaultOrganizationPartyGroupName!>
+	<#else>
+	  <#assign orgName = "">
+	</#if>
+	<#assign organizationLogoLinkURL = "${layoutSettings.organizationLogoLinkUrl?if_exists}">
 
-<body>
-  <div id="wait-spinner" style="display:none">
-    <div id="wait-spinner-image"></div>
-  </div>
-  <div class="page-container">
-    <div class="hidden">
-      <a href="#column-container" title="${uiLabelMap.CommonSkipNavigation}" accesskey="2">
-        ${uiLabelMap.CommonSkipNavigation}
-      </a>
-    </div>
-    <#if (userPreferences.COMPACT_HEADER)?default("N") == "N">
-      <div id="masthead">
-        <ul>
-          <#if layoutSettings.headerImageUrl??>
-            <#assign headerImageUrl = layoutSettings.headerImageUrl>
-          <#elseif layoutSettings.commonHeaderImageUrl??>
-            <#assign headerImageUrl = layoutSettings.commonHeaderImageUrl>
-          <#elseif layoutSettings.VT_HDR_IMAGE_URL??>
-            <#assign headerImageUrl = layoutSettings.VT_HDR_IMAGE_URL.get(0)>
-          </#if>
-          <#if headerImageUrl??>
-            <#if organizationLogoLinkURL?has_content>
-                <li id="org-logo-area"><a href="<@ofbizUrl>${logoLinkURL}</@ofbizUrl>"><img alt="${layoutSettings.companyName}" src="<@ofbizContentUrl>${StringUtil.wrapString(organizationLogoLinkURL)}</@ofbizContentUrl>"></a></li>
+<body>  
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="header-navigation">
+      <div class="container-fluid">
+          <div class="navbar-header">
+              <a class="navbar-brand" href="<@ofbizUrl>${logoLinkURL}</@ofbizUrl>">
+                <#if headerImageUrl?exists>
+                    <#if organizationLogoLinkURL?has_content>
+                        <img class="img-responsive" alt="${layoutSettings.companyName}" src="<@ofbizContentUrl>${StringUtil.wrapString(organizationLogoLinkURL)}</@ofbizContentUrl>">
+                    <#else>
+                        <img alt="${layoutSettings.companyName}" src="<@ofbizContentUrl>${StringUtil.wrapString(headerImageUrl)}</@ofbizContentUrl>">
+                    </#if>
                 <#else>
-                <li id="logo-area"><a href="<@ofbizUrl>${logoLinkURL}</@ofbizUrl>" title="${layoutSettings.companyName!}"></a></li>
-            </#if>
+                    ${layoutSettings.companyName}
+                 </#if>
+            </a>
+          </div>
+          <ul class="nav navbar-nav application-navbar">
+              <#if userLogin?has_content>
+                  <li class="dropdown"><#-- Primary Applications -->
+                        <button class="button-navbar" data-toggle="dropdown" type="button" aria-expanded="false" title="${userName}">
+                            <i class="glyphicon glyphicon-th"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-main-navbar" role="menu">
+                            <#list displayApps as display>
+                                  <#assign thisApp = display.getContextRoot()>
+                                  <#assign permission = true>
+                                  <#assign selected = false>
+                                  <#assign permissions = display.getBasePermission()>
+                                  <#list permissions as perm>
+                                    <#if (perm != "NONE" && !security.hasEntityPermission(perm, "_VIEW", session))>
+                                      <#-- User must have ALL permissions in the base-permission list -->
+                                      <#assign permission = false>
+                                    </#if>
+                                  </#list>
+                                  <#if permission == true>
+                                    <#if thisApp == contextPath || contextPath + "/" == thisApp>
+                                      <#assign selected = true>
+                                    </#if>
+                                    <#assign thisApp = StringUtil.wrapString(thisApp)>
+                                    <#assign thisURL = thisApp>
+                                    <#if thisApp != "/">
+                                      <#assign thisURL = thisURL + "/control/main">
+                                    </#if>
+                                    <#if layoutSettings.suppressTab?exists && display.name == layoutSettings.suppressTab>
+                                      <!-- do not display this component-->
+                                    <#else>
+                                      <li<#if selected> class="selected"</#if>><a href="${thisURL + externalKeyParam}"<#if uiLabelMap?exists> title="${uiLabelMap[display.description]}">${uiLabelMap[display.title]}<#else> title="${display.description}">${display.title}</#if></a></li>
+                                    </#if>
+                                  </#if>
+                                </#list>
+                        </ul>
+                </li><#-- Primary Applications dropdown ends-->
+                <li class="dropdown" id="secondary-application-menu"><#-- Secondary Applications -->
+                    <div class="btn-group navbar-btn">
+                          <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-plus button-label"></span>More Applications</button>
+                          <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <#-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">More Applications <span class="caret"></span></a> -->
+                          <ul class="dropdown-menu" role="menu">
+                              <#list displaySecondaryApps as display>
+                                  <#assign thisApp = display.getContextRoot()>
+                                  <#assign permission = true>
+                                  <#assign selected = false>
+                                  <#assign permissions = display.getBasePermission()>
+                                      <#list permissions as perm>
+                                        <#if (perm != "NONE" && !security.hasEntityPermission(perm, "_VIEW", session))>
+                                              <#-- User must have ALL permissions in the base-permission list -->
+                                              <#assign permission = false>
+                                        </#if>
+                                      </#list>
+                                      <#if permission == true>
+                                        <#if thisApp == contextPath || contextPath + "/" == thisApp>
+                                              <#assign selected = true>
+                                        </#if>
+                                        <#assign thisApp = StringUtil.wrapString(thisApp)>
+                                        <#assign thisURL = thisApp>
+                                        <#if thisApp != "/">
+                                              <#assign thisURL = thisURL + "/control/main">
+                                        </#if>
+                                        <#if layoutSettings.suppressTab?exists && display.name == layoutSettings.suppressTab>
+                                          <!-- do not display this component-->
+                                        <#else>
+                                            <li<#if selected> class="selected"</#if>><a href="${thisURL + externalKeyParam}"<#if uiLabelMap?exists> title="${uiLabelMap[display.description]}">${uiLabelMap[display.title]}<#else> title="${display.description}">${display.title}</#if></a></li>
+                                        </#if>
+                                      </#if>
+                            </#list>
+                          </ul>
+                      </div><#-- btn-group ends -->
+                  </li><#-- Secondary Applications ends -->
+                  <#--if webSiteId?exists && requestAttributes._CURRENT_VIEW_?exists && helpTopic?exists-->
+              </#if>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+          <#if parameters.componentName?exists && requestAttributes._CURRENT_VIEW_?exists && helpTopic?exists>
+              <#include "component://common/template/includes/HelpLink.ftl" />
+              <li>
+                  <button class="button-navbar" data-toggle="dropdown" type="button" aria-expanded="false" onclick="javascript:lookup_popup1('showHelp?helpTopic=${helpTopic}&amp;portalPageId=${parameters.portalPageId?if_exists}','help' ,500,500);" title="${uiLabelMap.CommonHelp}">
+                        <i class="glyphicon glyphicon-question-sign"></i>
+                  </button>
+                </li>
           </#if>
           <#if layoutSettings.middleTopMessage1?has_content && layoutSettings.middleTopMessage1 != " ">
-            <li class="last-system-msg">
-                <a href="${StringUtil.wrapString(layoutSettings.middleTopLink1!)}">${layoutSettings.middleTopMessage1!}</a><br/>
-                <a href="${StringUtil.wrapString(layoutSettings.middleTopLink2!)}">${layoutSettings.middleTopMessage2!}</a><br/>
-                <a href="${StringUtil.wrapString(layoutSettings.middleTopLink3!)}">${layoutSettings.middleTopMessage3!}</a>
-            </li>
+              <li class="dropdown">
+                  <button class="button-navbar" data-toggle="dropdown" type="button" aria-expanded="false">
+                      <i class="glyphicon glyphicon-envelope"></i>
+                  </button>
+                  <i class="badge-red">${layoutSettings.middleTopMessage1?size}</i>
+              <#-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">Messages <span class="caret"></span></a> -->
+                  <ul class="dropdown-menu dropdown-main-navbar" role="menu">
+                      <li><a href="${StringUtil.wrapString(layoutSettings.middleTopLink1!)}">${layoutSettings.middleTopMessage1?if_exists}</a></li>
+                      <li><a href="${StringUtil.wrapString(layoutSettings.middleTopLink2!)}">${layoutSettings.middleTopMessage2?if_exists}</a></li>
+                      <li><a href="${StringUtil.wrapString(layoutSettings.middleTopLink3!)}">${layoutSettings.middleTopMessage3?if_exists}</a></li>
+                  </ul>
+              </li>
           </#if>
-        </ul>
-        <br class="clear" />
-      </div>
-    </#if>
+
+          <#if userLogin?exists>
+                  <#if orgName?has_content>
+                    <li class="org">${orgName}</li>
+                  </#if>
+                  <#if userLogin.partyId?exists>
+                    <li class="dropdown">
+                        <button class="button-navbar" data-toggle="dropdown" type="button" aria-expanded="false" title="${userName}">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-main-navbar" role="menu">
+                            <li>${userName}</li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="<@ofbizUrl>passwordChange</@ofbizUrl>"><i class="glyphicon glyphicon-lock"></i> ${uiLabelMap.PartyChangePassword}</a></li>
+                            <li><a href="<@ofbizUrl>ListVisualThemes</@ofbizUrl>"><i class="glyphicon glyphicon-list"></i> ${uiLabelMap.CommonVisualThemes}</a></li>
+                            <li><a href="<@ofbizUrl>ListLocales</@ofbizUrl>"><i class="glyphicon glyphicon-globe"></i> ${uiLabelMap.CommonLanguageTitle}</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="<@ofbizUrl>logout</@ofbizUrl>"><i class="glyphicon glyphicon-off"></i> ${uiLabelMap.CommonLogout}</a></li>
+                        </ul>
+                    </li>
+                  <#else>
+                    <li class="user">${userName}</li>
+                  </#if>
+              <#else>
+                  <li>
+                      <div class="btn-group">
+                          <button class="btn btn-default navbar-btn" type="button" aria-expanded="false">
+                              <span class="glyphicon glyphicon-off"></span>
+                        </button>
+                        <a class="btn btn-default navbar-btn" href="<@ofbizUrl>${checkLoginUrl}</@ofbizUrl>">${uiLabelMap.CommonLogin}</a>
+                      </div>
+                   </li>
+            </#if>
+            <#--
+            <#if userLogin?exists>
+                  <#if (userPreferences.COMPACT_HEADER)?default("N") == "Y">
+                    <li class="collapsed"><a href="javascript:document.setUserPreferenceCompactHeaderN.submit()">&nbsp;</a>
+                          <form name="setUserPreferenceCompactHeaderN" method="post" action="<@ofbizUrl>setUserPreference</@ofbizUrl>">
+                            <input type="hidden" name="userPrefGroupTypeId" value="GLOBAL_PREFERENCES"/>
+                            <input type="hidden" name="userPrefTypeId" value="COMPACT_HEADER"/>
+                            <input type="hidden" name="userPrefValue" value="N"/>
+                          </form>
+                    </li>
+                  <#else>
+                    <li class="expanded"><a href="javascript:document.setUserPreferenceCompactHeaderY.submit()">&nbsp;</a>
+                          <form name="setUserPreferenceCompactHeaderY" method="post" action="<@ofbizUrl>setUserPreference</@ofbizUrl>">
+                            <input type="hidden" name="userPrefGroupTypeId" value="GLOBAL_PREFERENCES"/>
+                            <input type="hidden" name="userPrefTypeId" value="COMPACT_HEADER"/>
+                            <input type="hidden" name="userPrefValue" value="Y"/>
+                          </form>
+                    </li>
+                  </#if>
+            </#if>
+            -->
+          </ul>
+      </div> <!-- container-fluid -->
+  </nav>
