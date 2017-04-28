@@ -140,7 +140,7 @@ under the License.
 	<#assign organizationLogoLinkURL = "${layoutSettings.organizationLogoLinkUrl?if_exists}">
 
 <body>  
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="header-navigation">
+<nav class="navbar navbar-default navbar-static-top" role="navigation" id="header-navigation">
       <div class="container-fluid">
           <div class="navbar-header">
               <a class="navbar-brand" href="<@ofbizUrl>${logoLinkURL}</@ofbizUrl>">
@@ -195,9 +195,9 @@ under the License.
                     <div class="btn-group navbar-btn">
                           <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-plus button-label"></span>More Applications</button>
                           <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button" aria-expanded="false">
-                            <span class="caret"></span>
-                            <span class="sr-only">Toggle Dropdown</span>
-                        </button>
+	                            <span class="caret"></span>
+	                            <span class="sr-only">Toggle Dropdown</span>
+                        	</button>
                         <#-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">More Applications <span class="caret"></span></a> -->
                           <ul class="dropdown-menu" role="menu">
                               <#list displaySecondaryApps as display>
