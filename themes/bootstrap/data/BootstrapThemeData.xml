@@ -27,12 +27,17 @@ under the License.
     <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_SCREENSHOT" resourceValue="/bootstrap/screenshot.jpg" sequenceId="01"/>
 
     <!-- css references -->
-    <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/bootstrap/css/bootstrap.min.css" sequenceId="03"/>
+    <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/bootstrap/css/style.css" sequenceId="01"/>
+
 
     <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_HELPSTYLESHEET" resourceValue="/bootstrap/css/help.css" sequenceId="01"/>
     <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_DOCBOOKSTYLESHEET" resourceValue="/bootstrap/webapp/bootstrap/css/docbook.css" sequenceId="01"/>
     
+    <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/images/jquery/plugins/asmselect/jquery.asmselect-1.0.4a-beta.css" sequenceId="02"/>
     
+    <!-- bootstrap.min.css references -->
+    <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/bootstrap/css/bootstrap.min.css" sequenceId="04"/>
+
     <!-- javascript references -->
     <!-- jquery js must be first before bootstrap.js  -->
     <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/jquery-1.11.0.min.js" sequenceId="01"/>
@@ -56,9 +61,9 @@ under the License.
     <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/selectMultipleRelatedValues.js" sequenceId="20"/>
     <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/util.js" sequenceId="21"/>
     <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/date/FromThruDateCheck.js" sequenceId="22"/>
-   
+
     <!-- bootstrap js second -->
-    <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/bootstrap/js/bootstrap.min.js" sequenceId="30"/>
+    <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/bootstrap/js/bootstrap.min.js" sequenceId="31"/>
     <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/bootstrap/js/bootified.js" sequenceId="33"/>
  
     <!-- ftl references -->
