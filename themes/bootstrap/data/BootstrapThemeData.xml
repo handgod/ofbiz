@@ -19,7 +19,7 @@ under the License.
 -->
 
 <entity-engine-xml>
-    <VisualTheme visualThemeId="BOOTSTRAP_BASIC" visualThemeSetId="BACKOFFICE" description="BOOTSTRAP_BASIC: the evolution of the BOOTSTRAP_BASIC theme"/>
+    <VisualTheme visualThemeId="BOOTSTRAP_BASIC" visualThemeSetId="BACKOFFICE" description="BOOTSTRAP_BASIC theme"/>
     
     <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_NAME" resourceValue="BOOTSTRAP_BASIC" sequenceId="01"/>
     <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_SHORTCUT_ICON" resourceValue="/images/ofbiz.ico" sequenceId="01"/>
