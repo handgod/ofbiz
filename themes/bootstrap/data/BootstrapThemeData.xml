@@ -21,6 +21,7 @@ under the License.
 <entity-engine-xml>
     <VisualTheme visualThemeId="BOOTSTRAP_BASIC" visualThemeSetId="BACKOFFICE" description="BOOTSTRAP_BASIC theme"/>
     
+     <!-- basic name and icon -->
     <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_NAME" resourceValue="BOOTSTRAP_BASIC" sequenceId="01"/>
     <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_SHORTCUT_ICON" resourceValue="/images/ofbiz.ico" sequenceId="01"/>
     <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_HDR_IMAGE_URL" resourceValue="/images/ofbiz_logo.gif" sequenceId="01"/>
