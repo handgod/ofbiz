@@ -32,14 +32,14 @@ under the License.
 
     <!-- css references -->
     <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/bootstrap/css/style.css" sequenceId="01"/>
-    <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/bootstrap/css/global.css" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/bootstrap/css/global.css" sequenceId="02"/>
     <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_RTL_STYLESHEET" resourceValue="/bootstrap/css/stylertl.css" sequenceId="02"/>
 
 
     <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_HELPSTYLESHEET" resourceValue="/bootstrap/css/help.css" sequenceId="01"/>
     <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_DOCBOOKSTYLESHEET" resourceValue="/bootstrap/webapp/bootstrap/css/docbook.css" sequenceId="01"/>
     
-    <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/images/jquery/plugins/asmselect/jquery.asmselect-1.0.4a-beta.css" sequenceId="02"/>
+    <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/images/jquery/plugins/asmselect/jquery.asmselect-1.0.4a-beta.css" sequenceId="03"/>
     
     <!-- bootstrap.min.css references -->
     <VisualThemeResource visualThemeId="BOOTSTRAP_BASIC" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/bootstrap/css/bootstrap.min.css" sequenceId="04"/>
@@ -101,7 +101,7 @@ under the License.
     <VisualThemeResource visualThemeId="BOOTSTRAP_TOMAHAWK" resourceTypeEnumId="VT_HELPSTYLESHEET" resourceValue="/bootstrap/css/help.css" sequenceId="01"/>
     <VisualThemeResource visualThemeId="BOOTSTRAP_TOMAHAWK" resourceTypeEnumId="VT_DOCBOOKSTYLESHEET" resourceValue="/bootstrap/webapp/bootstrap/css/docbook.css" sequenceId="01"/>
     
-    <VisualThemeResource visualThemeId="BOOTSTRAP_TOMAHAWK" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/images/jquery/plugins/asmselect/jquery.asmselect-1.0.4a-beta.css" sequenceId="02"/>
+    <VisualThemeResource visualThemeId="BOOTSTRAP_TOMAHAWK" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/images/jquery/plugins/asmselect/jquery.asmselect-1.0.4a-beta.css" sequenceId="03"/>
     
     <!-- bootstrap.min.css references -->
     <VisualThemeResource visualThemeId="BOOTSTRAP_TOMAHAWK" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/bootstrap/css/bootstrap.min.css" sequenceId="04"/>
