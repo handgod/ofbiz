@@ -1,0 +1,83 @@
+安全组标识 描述 用户
+系统级别
+BIZADMIN 全部商业应用程序权限组，具有全部商业应用程序管理权限，不是技术人员权限。 bizadmin
+
+FLEXADMIN 缓存管理组，具有全部颗粒的权限。 flexadmin
+
+FULLADMIN 完全管理组，具有全部通用权限。 DemoLeadOwner DemoLeadOwner1 
+blog_admin blog_editor 
+admin imageAdmin system 
+SECURITYADMIN 安全管理组，具有在会员管理中修改安全设置的全部权限
+VIEWADMIN 演示管理组，具有全部浏览权限。 demoadmin ltdadmin ltdadmin1 
+
+ 
+模块级别
+
+产品 CATALOGADMIN 目录管理组，具有全部目录权限。
+CATALOGADMIN_LTD 有限的目录管理组，具有有限的目录权限。
+
+订单 ORDERADMIN 订单管理组，具有全部订单权限。
+ORDERADMIN_LTD 受限的订单管理组，具有全部受限的订单权限。
+ORDERENTRY 订单记录管理组；创建订单权限。 DemoRepStore
+ORDERENTRY_ALL 全部店铺的订单记录管理组。不需要特别的角色。 DemoRepAll
+ORDERPROC 管理组用于受限制的订单流程。
+ORDERPURCH 具有采购权限的订单记录。 AcctBuyer DemoBuyer
+ORDERSUPPLIER_LTD 有限的订单管理组用于供货商。 supplier
+
+会员管理 PARTYADMIN 会员管理组，具有全部会员权限。
+
+
+工作计划 WORKEFFORTADMIN WorkEffort Admin group, has all workeffort permissions.
+WORKEFFORT_USER 人工服务用户组；全部受限的人工服务权限。
+
+人力资源 HUMANRES_ADMIN 具有全部人力资源操作权限
+HUMANRES_APPROVER who will approve the internal job posting application. demoapprover
+HUMANRES_EMPLOYEE all the employees who want to apply for internal Job Posting. demoemployee
+
+
+文档内容 COMPDOCADMIN 内容文档管理组，全部权限。 approver
+CONTENT_USER 内容用户组；全部有限的内容权限。 bigal madmax
+IMAGEADMIN Image Management Admin. imageAdmin
+IMAGEAPPROVE Image Management Approve imageApprove
+IMAGEUPLOAD Image Management Upload. imageUpload
+财务 ACCTG_FUNCTNL_ADMIN 在财务管理中的全部操作。 accountingadmin
+
+
+
+安全组标识 					描述
+ACCTG_FUNCTNL_ADMIN		会计权限组，具有会计所有的函数
+BIZADMIN				全部商业应用程序权限组，具有全部商业应用程序管理权限，不是技术人员权限
+
+CATALOGADMIN			目录管理组，具有全部目录权限
+CATALOGADMIN_LTD		有限的目录管理组，具有有限的目录权限
+
+COMPDOCADMIN			合成文档管理组，全部权限
+CONTENT_USER			内容用户组；全部有限的内容权限
+
+FLEXADMIN				缓存管理组，具有全部颗粒的权限
+
+FULLADMIN				完全管理组，具有全部通用权限
+
+HUMANRES_ADMIN			人力资源管理组；全部人力资源的权限
+HUMANRES_APPROVER		人力资源审核组；具有审核内部流转的权限
+HUMANRES_EMPLOYEE		人力资源员工组；申请内部流转工作
+
+IMAGEADMIN				图片管理组
+IMAGEAPPROVE			图片审核组
+IMAGEUPLOAD				图片上传组
+
+ORDERADMIN				订单管理组，具有全部订单权限
+ORDERADMIN_LTD			受限的订单管理组，具有全部受限的订单权限
+ORDERENTRY				订单记录管理组；创建订单权限
+ORDERENTRY_ALL			全部店铺的订单记录管理组。不需要特别的角色
+ORDERPROC				管理组用于受限制的订单流程
+ORDERPURCH				具有采购权限的订单记录
+ORDERSUPPLIER_LTD		有限的订单管理组用于供货商
+
+PARTYADMIN				会员管理组，具有全部会员权限
+SECURITYADMIN			安全管理组，具有在会员管理中修改安全设置的全部权限
+
+VIEWADMIN				演示管理组，具有全部浏览权限
+
+WORKEFFORTADMIN			人工服务管理组；全部人工服务权限
+WORKEFFORT_USER			人工服务用户组；全部受限的人工服务权限
