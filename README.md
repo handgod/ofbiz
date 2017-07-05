@@ -619,6 +619,20 @@ groovy: http://www.ofbizchina.com/thread-53211-1-3.html
 Run/Debug Configurations -> Add New Configuration -> Jar Application -> 
 Then you should set Path to ofbiz.jar and working directory
 
+Step-by-step guide:
+
+Navigate to Run -> Edit Configurations…
+Click + to add new configuration, and choose Gradle.
+Fill in the following fields:
+Name: My OFBiz
+Gradle project: <path to build.gradle>
+Tasks: ofbiz
+Click OK.
+Navigate to Run -> Debug…, choose My OFBiz.
+Click Stop ‘My OFBiz’ when done with debugging.
+
+ref:
+https://cwiki.apache.org/confluence/display/OFBIZ/Running+and+Debugging+OFBiz+in+Intellij+IDEA
 * * * * * * * * * * * *
 
 Useful Tips
