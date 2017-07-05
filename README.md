@@ -603,6 +603,21 @@ https://localhost:8443/webtools
 archtecture:http://www.ofbizchina.com/thread-51908-1-3.html
 groovy: http://www.ofbizchina.com/thread-53211-1-3.html
 
+6)intelij build method：
+    1) checkout the project using svn from the command line 
+    2) Start IntelliJ and select New Project From Existing Sources... 
+    3) Select the Gradle option (build.gradle)
+    4) Then select the Gradle Wrapper mode (default); in this screen make sure 
+    you select Java 8 (for this to appear, you have to properly set your 
+    environment outside of IntelliJ) 
+    5) when prompted, select all the modules and also keep the root module 
+    After that you can use Gradle from IntelliJ.
+ ref:
+    https://cwiki.apache.org/confluence/display/OFBIZ/Setup+Intellij+IDEA+IDE+for+OFBiz+Framework
+     
+ 7) intllij run&debug:
+Run/Debug Configurations -> Add New Configuration -> Jar Application -> 
+Then you should set Path to ofbiz.jar and working directory
 
 * * * * * * * * * * * *
 
