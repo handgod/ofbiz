@@ -10,6 +10,7 @@
             <widgets>
                 <decorator-screen name="RepeaterCommonDecorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
+                        <label text="repeater test!"/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
