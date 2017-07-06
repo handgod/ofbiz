@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <SecurityGroupPermission groupId="FULLADMIN" permissionId="REPEATER_ADMIN"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="REPEATER_CREATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="REPEATER_DELETE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="REPEATER_UPDATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="REPEATER_VIEW"/>
+    <SecurityGroupPermission groupId="VIEWADMIN" permissionId="REPEATER_VIEW"/>
+    <SecurityGroupPermission groupId="BIZADMIN" permissionId="REPEATER_ADMIN"/>
+</entity-engine-xml>

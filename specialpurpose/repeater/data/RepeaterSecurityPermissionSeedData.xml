@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <SecurityPermission description="View operations in the Repeater Component." permissionId="REPEATER_VIEW"/>
+    <SecurityPermission description="Create operations in the Repeater Component." permissionId="REPEATER_CREATE"/>
+    <SecurityPermission description="Update operations in the Repeater Component." permissionId="REPEATER_UPDATE"/>
+    <SecurityPermission description="Delete operations in the Repeater Component." permissionId="REPEATER_DELETE"/>
+    <SecurityPermission description="ALL operations in the Repeater Component." permissionId="REPEATER_ADMIN"/>
+
+    <SecurityGroupPermission groupId="SUPER" permissionId="REPEATER_ADMIN"/>
+
+</entity-engine-xml>

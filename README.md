@@ -612,6 +612,7 @@ groovy: http://www.ofbizchina.com/thread-53211-1-3.html
     environment outside of IntelliJ) 
     5) when prompted, select all the modules and also keep the root module 
     After that you can use Gradle from IntelliJ.
+    
  ref:
     https://cwiki.apache.org/confluence/display/OFBIZ/Setup+Intellij+IDEA+IDE+for+OFBiz+Framework
      
@@ -633,6 +634,11 @@ Click Stop ‘My OFBiz’ when done with debugging.
 
 ref:
 https://cwiki.apache.org/confluence/display/OFBIZ/Running+and+Debugging+OFBiz+in+Intellij+IDEA
+
+8)create repeater webapp plugin in specialpurpose:
+
+gradlew createPlugin -PpluginId=repeater
+
 * * * * * * * * * * * *
 
 Useful Tips
