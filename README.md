@@ -639,6 +639,12 @@ https://cwiki.apache.org/confluence/display/OFBIZ/Running+and+Debugging+OFBiz+in
 
 gradlew createPlugin -PpluginId=repeater
 
+9)dev ref:
+https://wenku.baidu.com/view/e4bb40bd195f312b3069a516.html
+https://cwiki.apache.org/confluence/display/OFBIZ/OFBiz+Tutorial+-+A+Beginners+Development+Guide
+
+
+
 * * * * * * * * * * * *
 
 Useful Tips

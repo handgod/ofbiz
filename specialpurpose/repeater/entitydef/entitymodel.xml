@@ -9,4 +9,21 @@
     <copyright></copyright>
     <version></version>
 
+    <entity entity-name="RepeaterType" package-name="org.ofbiz.repeater" title="RepeaterDemo Type Entity">
+        <field name="RepeaterDemoTypeId" type="id-ne"><description>primary sequenced ID</description></field>
+        <field name="description" type="description"></field>
+        <prim-key field="RepeaterDemoTypeId"/>
+    </entity>
+
+    <entity entity-name="RepeaterDemo" package-name="org.ofbiz.repeater" title="RepeaterDemo Entity">
+        <field name="RepeaterDemoId" type="id-ne"><description>primary sequenced ID</description></field>
+        <field name="RepeaterDemoTypeId" type="id-ne"></field>
+        <field name="IMEI" type="name"></field>
+        <field name="uniqueId" type="name"></field>
+        <field name="RepeaterIpAddress" type="name"></field>
+        <prim-key field="RepeaterDemoId"/>
+        <relation type="one" fk-name="ODEM_OD_TYPE_ID" rel-entity-name="RepeaterType">
+            <key-map field-name="RepeaterDemoTypeId"/>
+        </relation>
+    </entity>
 </entitymodel>
