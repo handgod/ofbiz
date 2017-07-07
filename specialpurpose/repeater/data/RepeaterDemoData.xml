@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <entity-engine-xml>
-    <RepeaterDemo RepeaterDemoId="1" RepeaterDemoTypeId="1" IMEI="1234567890987654" uniqueId="1234567890987654" RepeaterIpAddress="118.89.48.252" lastUpdatedStamp="2017-07-06 20:06:17.0" lastUpdatedTxStamp="2017-07-06 20:06:17.0" createdStamp="2017-07-06 20:06:17.0" createdTxStamp="2017-07-06 20:06:17.0"/>
-    <RepeaterDemo RepeaterDemoId="2" RepeaterDemoTypeId="1" IMEI="1234567890987654" uniqueId="1234567890987654" RepeaterIpAddress="118.89.48.252" lastUpdatedStamp="2017-07-06 20:15:12.0" lastUpdatedTxStamp="2017-07-06 20:15:12.0" createdStamp="2017-07-06 20:06:17.0" createdTxStamp="2017-07-06 20:06:17.0"/>
+    <RepeaterDemo RepeaterDemoId="1" RepeaterDemoTypeId="INTERNAL" IMEI="1234567890987654" uniqueId="1234567890987654" RepeaterIpAddress="118.89.48.252" />
+    <RepeaterDemo RepeaterDemoId="2" RepeaterDemoTypeId="INTERNAL" IMEI="1234567890987654" uniqueId="1234567890987654" RepeaterIpAddress="118.89.48.252" />
+    <RepeaterDemo RepeaterDemoId="1" RepeaterDemoTypeId="EXTERNAL" IMEI="1234567890987654" uniqueId="1234567890987654" RepeaterIpAddress="118.89.48.252" />
+    <RepeaterDemo RepeaterDemoId="2" RepeaterDemoTypeId="EXTERNAL" IMEI="1234567890987654" uniqueId="1234567890987654" RepeaterIpAddress="118.89.48.252" />
 </entity-engine-xml>

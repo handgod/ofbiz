@@ -11,6 +11,9 @@
                 <decorator-screen name="RepeaterCommonDecorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                         <label text="repeater test!"/>
+                        <screenlet title="Add Repeater Demo">
+                            <include-form name="AddRepeaterDemo" location="component://repeater/widget/RepeaterForms.xml"/>
+                        </screenlet>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
