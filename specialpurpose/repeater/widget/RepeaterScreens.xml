@@ -10,10 +10,16 @@
             <widgets>
                 <decorator-screen name="RepeaterCommonDecorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
-                        <label text="repeater test!"/>
-                        <screenlet title="Add Repeater Demo">
-                            <include-form name="AddRepeaterDemo" location="component://repeater/widget/RepeaterForms.xml"/>
+                        <label text="createRepeaterDemoByJavaService test!"/>
+                        <screenlet title="Call RepeaterDemoByJavaService">
+                            <include-form name="RepeaterDemoByJavaServiceForm" location="component://repeater/widget/RepeaterForms.xml"/>
                         </screenlet>
+
+                        <label text="createRepeaterDemoByGroovyService test!"/>
+                        <screenlet title="Call RepeaterDemoByGroovyService">
+                            <include-form name="RepeaterDemoByGroovyServiceForm" location="component://repeater/widget/RepeaterForms.xml"/>
+                        </screenlet>
+
                     </decorator-section>
                 </decorator-screen>
             </widgets>

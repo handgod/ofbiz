@@ -19,11 +19,11 @@ public class RepeaterServices {
         Delegator delegator = dctx.getDelegator();
         try {
             GenericValue RepeaterDemo = delegator.makeValue("RepeaterDemo");
-            // Auto generating next sequence of ofbizDemoId primary key
+            // Auto generating next sequence of RepeaterDemoId primary key
             RepeaterDemo.setNextSeqId();
             // Setting up all non primary key field values from context map
             RepeaterDemo.setNonPKFields(context);
-            // Creating record in database for OfbizDemo entity for prepared value
+            // Creating record in database for RepeaterDemo entity for prepared value
             RepeaterDemo = delegator.create(RepeaterDemo);
             result.put("RepeaterDemoId", RepeaterDemo.getString("RepeaterDemoId"));
             Debug.logInfo("==========This is my first Java Service implementation in Apache OFBiz. RepeaterDemoId record created successfully with ofbizDemoId: " + RepeaterDemo.getString("RepeaterDemoId"),module);
