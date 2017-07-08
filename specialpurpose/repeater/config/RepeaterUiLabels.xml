@@ -20,4 +20,52 @@
         <value xml:lang="zh_CN">不允许你浏览这个页面�?</value>
         <value xml:lang="zh-TW">不允許您檢視這�?�頁�?.</value>
     </property>
+
+    <property key="AddRepeaterFtl">
+        <value xml:lang="en">page Add Repeater from Ftl </value>
+        <value xml:lang="zh_CN">page Add Repeater from Ftl</value>
+        <value xml:lang="zh-TW">page Add Repeater from Ftl</value>
+    </property>
+
+    <property key="RepeaterListResult">
+        <value xml:lang="en">RepeaterListResult</value>
+        <value xml:lang="zh_CN">RepeaterListResult</value>
+        <value xml:lang="zh-TW">RepeaterListResult</value>
+    </property>
+
+    <property key="RepeaterAddResult">
+        <value xml:lang="en">RepeaterAddResult</value>
+        <value xml:lang="zh_CN">RepeaterAddResult</value>
+        <value xml:lang="zh-TW">RepeaterAddResult</value>
+    </property>
+
+    <property key="RepeaterId">
+        <value xml:lang="en"> </value>
+        <value xml:lang="zh_CN">RepeaterId</value>
+        <value xml:lang="zh-TW">RepeaterId</value>
+    </property>
+    <property key="RepeaterType">
+        <value xml:lang="en"> </value>
+        <value xml:lang="zh_CN">RepeaterType</value>
+        <value xml:lang="zh-TW">RepeaterType</value>
+    </property>
+
+    <property key="RepeaterIMEI">
+        <value xml:lang="en">RepeaterIMEI </value>
+        <value xml:lang="zh_CN">RepeaterIMEI</value>
+        <value xml:lang="zh-TW">RepeaterIMEI</value>
+    </property>
+
+    <property key="RepeaterUniqueId">
+        <value xml:lang="en">RepeaterUniqueId </value>
+        <value xml:lang="zh_CN">RepeaterUniqueId</value>
+        <value xml:lang="zh-TW">RepeaterUniqueId</value>
+    </property>
+
+    <property key="RepeaterComments">
+        <value xml:lang="en">RepeaterComments </value>
+        <value xml:lang="zh_CN">RepeaterComments</value>
+        <value xml:lang="zh-TW">RepeaterComments</value>
+    </property>
+
 </resource>

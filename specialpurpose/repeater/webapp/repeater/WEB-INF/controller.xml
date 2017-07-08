@@ -35,6 +35,22 @@
         <response name="success" type="view" value="main"/>
     </request-map>
 
+    <request-map uri="createRepeaterDemoEvent">
+        <security https="true" auth="true"/>
+        <event type="java" path="org.apache.ofbiz.repeater.RepeaterEvents" invoke="createRepeaterEvent"/>
+        <response name="success" type="view" value="main"/>
+        <response name="error" type="view" value="main"/>
+    </request-map>
+
+
+    <request-map uri="AddRepeaterFtl">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="AddRepeaterFtl"/>
+    </request-map>
+
     <!-- View Mappings -->
     <view-map name="main" type="screen" page="component://repeater/widget/RepeaterScreens.xml#main"/>
+    <!--View Mapping-->
+    <view-map name="AddRepeaterFtl" type="screen" page="component://repeater/widget/RepeaterScreens.xml#AddRepeaterFtl"/>
+
 </site-conf>
