@@ -1,5 +1,6 @@
-<#-- tradional style.
-<div class="screenlet-body">
+<#--&lt;#&ndash; tradional style.-->
+
+<#--<div class="screenlet-body">
     <form id="createRepeaterDemoEvent" method="post" action="<@ofbizUrl>createRepeaterDemoEvent</@ofbizUrl>">
         <input type="hidden" name="addRepeaterFromFtl" value="Y"/>
         <fieldset>
@@ -26,12 +27,13 @@
         </fieldset>
         <input type="submit" value="${uiLabelMap.CommonAdd}" />
     </form>
-</div>
+</div>-->
 
--->
+
 <#--bootstrap style-->
-<div
-<form method="post" action="<@ofbizUrl>createRepeaterDemoEvent</@ofbizUrl>" name="createRepeaterDemoEvent" class="form-horizontal">
+<div>
+<form id="createRepeaterDemoEvent"  method="post" action="<@ofbizUrl>createRepeaterDemoEvent</@ofbizUrl>"  class="form-horizontal">
+    <fieldset>
     <div class="control-group">
         <label class="control-label" for="RepeaterDemoTypeId">${uiLabelMap.OfbizDemoType}</label>
         <div class="controls">
@@ -45,13 +47,13 @@
     <div class="control-group">
         <label class="control-label" for="IMEI">${uiLabelMap.RepeaterIMEI}</label>
         <div class="controls">
-            <input type="text" id="IMEI" name="IMEI" required>
+            <input type="text" id="IMEI" name="IMEI" class='required'>
         </div>
     </div>
     <div class="control-group">
         <label class="control-label" for="uniqueId">${uiLabelMap.RepeaterUniqueId}</label>
         <div class="controls">
-            <input type="text" id="uniqueId" name="uniqueId" required>
+            <input type="text" id="uniqueId" name="uniqueId" class='required'>
         </div>
     </div>
     <div class="control-group">
@@ -66,6 +68,7 @@
             <input type="text" id="comments" name="comments">
         </div>
     </div>
+    </fieldset>
     <div class="control-group">
         <div class="controls">
             <button type="submit" class="btn">${uiLabelMap.CommonAdd}</button>
