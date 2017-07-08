@@ -53,4 +53,20 @@
             </widgets>
         </section>
     </screen>
+
+    <screen name="RepeaterRegPage">
+        <section>
+            <actions>
+                <set field="titleProperty" value="RepeaterRegPage"/>
+                <set field="headerItem" value="RepeaterRegPage"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="RepeaterCommonDecoratorBootstrap" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <label text="RepeaterRegPage test!"/>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
 </screens>

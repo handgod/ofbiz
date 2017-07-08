@@ -30,9 +30,6 @@
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                         <section>
-                            <condition>
-                                <if-has-permission permission="REPEATER" action="_VIEW"/>
-                            </condition>
                             <widgets>
                                 <decorator-section-include name="body"/>
                             </widgets>

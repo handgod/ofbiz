@@ -31,7 +31,6 @@
         title="Repeater"
         server="default-server"
         location="webapp/repeater"
-        base-permission="OFBTOOLS,REPEATER"
         mount-point="/repeater"
         app-bar-display="true"
     />
