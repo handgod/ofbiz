@@ -21,10 +21,10 @@
         <value xml:lang="zh-TW">不允許您檢視這�?�頁�?.</value>
     </property>
 
-    <property key="AddRepeaterFtl">
-        <value xml:lang="en">page Add Repeater from Ftl </value>
-        <value xml:lang="zh_CN">page Add Repeater from Ftl</value>
-        <value xml:lang="zh-TW">page Add Repeater from Ftl</value>
+    <property key="RepeaterBootstrapPage">
+        <value xml:lang="en">RepeaterBootstrapPage</value>
+        <value xml:lang="zh_CN">RepeaterBootstrapPage</value>
+        <value xml:lang="zh-TW">RepeaterBootstrapPage</value>
     </property>
 
     <property key="RepeaterListResult">
@@ -61,7 +61,11 @@
         <value xml:lang="zh_CN">RepeaterUniqueId</value>
         <value xml:lang="zh-TW">RepeaterUniqueId</value>
     </property>
-
+    <property key="RepeaterIpAddress">
+        <value xml:lang="en">RepeaterIpAddress </value>
+        <value xml:lang="zh_CN">RepeaterIpAddress</value>
+        <value xml:lang="zh-TW">RepeaterIpAddress</value>
+    </property>
     <property key="RepeaterComments">
         <value xml:lang="en">RepeaterComments </value>
         <value xml:lang="zh_CN">RepeaterComments</value>

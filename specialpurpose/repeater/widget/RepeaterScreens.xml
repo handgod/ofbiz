@@ -26,16 +26,16 @@
         </section>
     </screen>
 
-    <screen name="AddRepeaterFtl">
+    <screen name="RepeaterBootstrapPage">
         <section>
             <actions>
                 <set field="titleProperty" value="PageTitleAddOfbizDemos"/>
-                <set field="headerItem" value="AddRepeaterFtl"/>
+                <set field="headerItem" value="RepeaterBootstrapPage"/>
                 <script location="component://repeater/script/ListRepeater.groovy"/>
 
             </actions>
             <widgets>
-                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                <decorator-screen name="RepeaterCommonDecoratorBootstrap" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                         <screenlet title="${uiLabelMap.RepeaterListResult}">
                             <platform-specific>

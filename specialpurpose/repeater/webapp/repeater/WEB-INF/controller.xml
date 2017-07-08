@@ -43,14 +43,14 @@
     </request-map>
 
 
-    <request-map uri="AddRepeaterFtl">
+    <request-map uri="RepeaterBootstrapPage">
         <security https="true" auth="true"/>
-        <response name="success" type="view" value="AddRepeaterFtl"/>
+        <response name="success" type="view" value="RepeaterBootstrapPage"/>
     </request-map>
 
     <!-- View Mappings -->
     <view-map name="main" type="screen" page="component://repeater/widget/RepeaterScreens.xml#main"/>
     <!--View Mapping-->
-    <view-map name="AddRepeaterFtl" type="screen" page="component://repeater/widget/RepeaterScreens.xml#AddRepeaterFtl"/>
+    <view-map name="RepeaterBootstrapPage" type="screen" page="component://repeater/widget/RepeaterScreens.xml#RepeaterBootstrapPage"/>
 
 </site-conf>

@@ -2,6 +2,6 @@
 <menus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ofbiz.apache.org/Widget-Menu" xsi:schemaLocation="http://ofbiz.apache.org/Widget-Menu http://ofbiz.apache.org/dtds/widget-menu.xsd">
     <menu name="MainAppBar" title="${uiLabelMap.RepeaterApplication}" extends="CommonAppBarMenu" extends-resource="component://common/widget/CommonMenus.xml">
         <menu-item name="main" title="${uiLabelMap.CommonMain}"><link target="main"/></menu-item>
-        <menu-item name="AddRepeaterFtl" title="${uiLabelMap.AddRepeaterFtl}"><link target="AddRepeaterFtl"/></menu-item>
+        <menu-item name="RepeaterBootstrapPage" title="${uiLabelMap.RepeaterBootstrapPage}"><link target="RepeaterBootstrapPage"/></menu-item>
     </menu>
 </menus>
