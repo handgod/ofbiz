@@ -44,9 +44,9 @@
     </request-map>
 
     <request-map uri="RepeaterRegEvents">
-        <event type="java" path="org.apache.ofbiz.repeater.RepeaterEvents" invoke="createRepeaterEvent"/>
-        <response name="success" type="view" value="main"/>
-        <response name="error" type="view" value="main"/>
+        <event type="java" path="org.apache.ofbiz.repeater.RepeaterRegEvents" invoke="regRepeaterEvent"/>
+        <response name="success" type="request" value="json"/>
+        <response name="error" type="request" value="json"/>
     </request-map>
 
     <request-map uri="RepeaterRegPage">
