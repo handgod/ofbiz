@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class RegisterServer {
 
-  //  private static String url = "http://localhost:8080/repeater/control/RepeaterRegEvents";//nat.vivo.com.cn
+  //  private static String url = "http://localhost:8080/repeater/control/RepeaterRegEvents";
     private static String url = "http://118.89.48.252:8080/repeater/control/RepeaterRegEvents";
 
     private static String imei;
