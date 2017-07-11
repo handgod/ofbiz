@@ -1,7 +1,14 @@
 
+import android.telephony.TelephonyManager;
+import android.text.TextUtils;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
+
+import static android.content.Context.TELEPHONY_SERVICE;
+import static java.net.Proxy.Type.HTTP;
+
 /**
  * Created by Administrator on 2017/7/10.
  */
@@ -32,17 +39,22 @@ public class RegisterServer {
             //          target = "42276";
         }
 
-        boolean reg_success = reg(imei);
+        boolean reg_success = reg();
 
     }
     private static void init(){
-        imei = null;
-        uniqueId = null;
+        imei = "1234567890987665";
+        uniqueId = "123456";
         target = null;
     }
-    public static boolean reg(String imei) {
+    public static boolean reg() {
         String str = null;
         init();
+       /* TelephonyManager TelephonyMgr = (TelephonyManager) ChromeApplication.getInstance().getSystemService(TELEPHONY_SERVICE);
+        imei = TelephonyMgr.getDeviceId();
+        if (TextUtils.isEmpty(imei)) {
+            imei = "random_" + String.valueOf(new Random().nextInt());
+        }*/
         Map<String,String> map = new HashMap<String,String>();
         map.put("imei", imei);
         map.put("uniqueId", uniqueId);
