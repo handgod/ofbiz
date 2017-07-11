@@ -41,7 +41,7 @@ public class RepeaterRegEvents {
         //for request return json. ref public class EbayStoreOptions :retrieveThemeColorSchemeByThemeId
         Map<String,Object> result = new HashMap<String, Object>();
         result.put("IMEI",IMEI);
-        result.put("RepeaterIpAddress","118.89.48.252");
+        result.put("RepeaterIpAddress","118.89.48.252:5500");
         result.put("USERID","123456");
      //   result.put("status","true");
         request.setAttribute("result", result);
