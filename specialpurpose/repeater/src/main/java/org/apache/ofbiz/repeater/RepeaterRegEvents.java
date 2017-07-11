@@ -28,7 +28,7 @@ public class RepeaterRegEvents {
 
         String RepeaterDemoTypeId = request.getParameter("RepeaterDemoTypeId");
         String IMEI = request.getParameter("IMEI");
-        String uniqueId = request.getParameter("uniqueId");
+        String uniqueId = request.getParameter("USERID");
         String RepeaterIpAddress = request.getParameter("RepeaterIpAddress");
 
         if (UtilValidate.isEmpty(IMEI) || UtilValidate.isEmpty(uniqueId)) {
@@ -39,12 +39,12 @@ public class RepeaterRegEvents {
         String comments = request.getParameter("comments");
 
         //for request return json. ref public class EbayStoreOptions :retrieveThemeColorSchemeByThemeId
-        Map<String,Object> regInfo = new HashMap<String, Object>();
-        regInfo.put("IMEI",IMEI);
-        regInfo.put("uniqueId","123456");
-        regInfo.put("RepeaterIpAddress","118.89.48.252");
-        request.setAttribute("regInfo", regInfo);
-
+        Map<String,Object> result = new HashMap<String, Object>();
+        result.put("IMEI",IMEI);
+        result.put("RepeaterIpAddress","118.89.48.252");
+        result.put("USERID","123456");
+     //   result.put("status","true");
+        request.setAttribute("result", result);
 
         try {
             Debug.logInfo("=======Creating Repeater record in event using service createOfbizDemoByGroovyService=========", module);
@@ -55,8 +55,6 @@ public class RepeaterRegEvents {
         //    request.setAttribute("_ERROR_MESSAGE_", errMsg);
             return "error";
         }
-
-
 
         //  request.setAttribute("_EVENT_MESSAGE_", "Repeater created succesfully.");
         return "success";
