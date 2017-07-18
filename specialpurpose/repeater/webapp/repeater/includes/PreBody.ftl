@@ -5,7 +5,7 @@
 <#if webSiteFaviconContent?has_content>
     <link rel="shortcut icon" href="">
 </#if>
-<#list styleSheets as styleSheet>
+<#list layoutSettings.styleSheets as styleSheet>
     <link rel="stylesheet" href="${StringUtil.wrapString(styleSheet)}" type="text/css"/>
 </#list>
 <#list javaScripts as javaScript>
