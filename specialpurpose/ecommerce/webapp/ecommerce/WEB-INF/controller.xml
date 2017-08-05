@@ -1874,6 +1874,10 @@ under the License.
         <response name="userLoginMissing" type="request" value="newcustomer"/>
     </request-map>
 
+
+    <!-- Request-map for mobile devcies-->
+    <request-map uri="mobileMain"><security https="false" auth="false"/><response name="success" type="view" value="mobileMain" save-current-view="true"/></request-map>
+    <!-- end of Request-map for mobile devcies-->
     <!-- End of Request Mappings -->
 
     <!-- View Mappings -->
@@ -2014,5 +2018,7 @@ under the License.
     <!-- Shopping List 's Ajax -->
     <view-map name="showShoppingList" type="screen" page="component://ecommerce/widget/ShoppingListScreens.xml#showShoppingList"/>
     
+    <!--view map for mobile devices-->
+    <view-map name="mobileMain" type="screen" page="component://ecommerce/widget/CommonScreens.xml#main"/>
     <!-- End of View Mappings -->
 </site-conf>
